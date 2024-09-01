@@ -2,6 +2,7 @@ package org.aman.model;
 
 import org.aman.component.OrderState;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -11,6 +12,8 @@ public class Order {
     private Map<Item,Integer> itemsOrdered;
     private Double totalCost;
     private OrderState orderState;
+    private String deliveryAddress ;
+    private Date createdAt ;
 
     @Override
     public String toString() {
@@ -61,5 +64,21 @@ public class Order {
 
     public void setCustomerId(String customerId) {
         this.customerId = customerId;
+    }
+
+    public Date getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public String getDeliveryAddress() {
+        return deliveryAddress;
+    }
+
+    public void setDeliveryAddress(String deliveryAddress) {
+        this.deliveryAddress = deliveryAddress;
     }
 }

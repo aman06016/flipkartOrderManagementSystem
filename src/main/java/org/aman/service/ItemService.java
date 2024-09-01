@@ -21,9 +21,11 @@ public class ItemService {
         item.setSellerId(seller.getId());
         item.setInventoryId(seller.getInventoryId());
         item = itemRepository.save(item);
+        System.out.printf(" %s  has been added to %s's inventory \n" , item , seller.getName());
+
         inventoryRepository.addItemToInventory(item,seller,quantity);
 
-        System.out.printf(" %s  has been added to %s's inventory \n" , item , seller.getName());
+
         return item;
     }
 }
